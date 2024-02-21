@@ -14,7 +14,7 @@
             margin: 20px;
             background-color: #f0f8ff; /* Light blue background color */
         }
-        h1, h2 {
+        h1, h2, h3 {
             margin-bottom: 0; /* Remove default margin */
             color: #333; /* Dark text color */
         }
@@ -42,18 +42,16 @@
 </head>
 <body>
     <div>
-        <h1>CSV Uploader</h1>
+        <h1>Machining Data</h1>
+        <h2>CSV Uploader</h2>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept=".csv">
             <input type="submit" value="Predict">
         </form>
         
-        {% if message %}
-            <p>{{ message }}</p>
-        {% endif %}
 
         {% if result %}
-            <h2>Input Data and Predictions:</h2>
+            <h3>Input Data and Predictions:</h3>
             {{ result|safe }}
         {% endif %}
     </div>
